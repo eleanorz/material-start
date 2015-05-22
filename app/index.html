@@ -35,6 +35,7 @@
   </md-sidenav>
 
 
+
   <div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
 
     <md-toolbar layout="row" class="md-whiteframe-z1">
@@ -56,6 +57,26 @@
       </md-content>
 
   </div>
+  
+  <!-- Eleanor Added Right Nav -->
+  <md-sidenav class="site-sidenav md-sidenav-right md-whiteframe-z2"
+                md-component-id="right"
+                md-is-locked-open="$mdMedia('gt-sm')">
+
+    <md-toolbar class="md-whiteframe-z1">
+      <h1>Material Design Options</h1>
+    </md-toolbar>
+
+    <md-list>
+      <md-list-item ng-repeat="it in ul.users">
+          <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
+            <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
+            {{it.name}}
+          </md-button>
+      </md-list-item>
+    </md-list>
+
+  </md-sidenav>
 
     <script src="./bower_components/angular/angular.js"></script>
     <script src="./bower_components/angular-animate/angular-animate.js"></script>
